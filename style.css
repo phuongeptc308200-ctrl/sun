@@ -1006,6 +1006,16 @@ main,
 
   @media (max-width: 800px) {
     .network-map { padding: 10px; }
+    .tabs {
+      gap: 4px;
+      padding: 4px;
+      margin-bottom: 12px;
+    }
+    .tab-button {
+      min-width: 96px;
+      padding: 9px 14px;
+      font-size: 0.85rem;
+    }
     .map-card {
       display: flex;
       min-height: 0;
@@ -1042,13 +1052,25 @@ main,
     .route-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px 8px; }
     .route-link { font-size: 11px; grid-template-columns: 23px 1fr; padding: 3px; }
     .mapsvg { transform: none; }
-    .tab-button { min-width: 115px; padding-inline: 16px; }
+    #panel-international .world-svg {
+      transform: scale(1.22);
+      transform-origin: 55% 61%;
+    }
   }
   @media (max-width: 520px) {
+    .tab-button {
+      min-width: 86px;
+      padding: 8px 11px;
+      font-size: 0.78rem;
+    }
     .map-stage { height: clamp(500px, 128vw, 640px); }
     .panel-heading { white-space: normal; align-items: flex-start; }
     .panel-count { padding-top: 5px; }
     .route-list { grid-template-columns: 1fr; }
+    #panel-international .world-svg {
+      transform: scale(1.32);
+      transform-origin: 55% 63%;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
     .route, .hub-ring { animation: none; }
