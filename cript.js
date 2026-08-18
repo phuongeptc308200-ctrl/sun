@@ -83,6 +83,70 @@ document.querySelectorAll("[data-flight-tabs]").forEach((tabs) => {
   });
 });
 
+/* ============ AVIATION STATISTICS ============ */
+(() => {
+  const cards = document.querySelectorAll(".aviation-stats__card");
+  if (!cards.length) return;
+
+  const easeOutExpo = (value) => (value === 1 ? 1 : 1 - Math.pow(2, -10 * value));
+
+  const formatValue = (value, element) => {
+    const decimals = Number(element.dataset.decimals || 0);
+    const fixed = Number(value).toFixed(decimals);
+
+    if (element.dataset.format === "vi-decimal") {
+      return Number(fixed).toLocaleString("vi-VN", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      });
+    }
+
+    return fixed;
+  };
+
+  const animateCount = (element, duration = 1600) => {
+    if (element.dataset.done === "1") return;
+    element.dataset.done = "1";
+
+    const target = Number(element.dataset.target || 0);
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      element.textContent = formatValue(target * easeOutExpo(progress), element);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const showCard = (card, index = 0) => {
+    window.setTimeout(() => {
+      card.classList.add("is-visible");
+      card.querySelectorAll(".aviation-count").forEach((counter, counterIndex) => {
+        window.setTimeout(() => animateCount(counter), counterIndex * 80);
+      });
+    }, (index % 2) * 90);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          showCard(entry.target, Array.from(cards).indexOf(entry.target));
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -6% 0px" },
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  } else {
+    cards.forEach(showCard);
+  }
+})();
+
 
 /* ============ INTEGRATED ROUTE MAP ============ */
 (function () {

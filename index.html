@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sun PhuQuoc Airways – Từ đảo ngọc, sải cánh thế giới" />
     <title>Sun PhuQuoc Airways</title>
-    <link rel="stylesheet" href="style.css?v=responsive-ui-5" />
+    <link rel="stylesheet" href="style.css?v=aviation-stats-16" />
   </head>
   <body>
     <main>
@@ -26,11 +26,19 @@
           aria-hidden="true"
         />
         <img
-          class="hero__plane"
+          class="hero__plane hero__plane--one"
           src="img/header-plane.png"
           alt="Máy bay Sun PhuQuoc Airways"
           width="1412"
           height="1114"
+        />
+        <img
+          class="hero__plane hero__plane--two"
+          src="img/header-plane.png"
+          alt=""
+          width="1412"
+          height="1114"
+          aria-hidden="true"
         />
         <img
           class="hero__clouds hero__clouds--near"
@@ -80,9 +88,52 @@
           loading="lazy"
         />
 
-        <div class="interactive-label" aria-label="Bảng số liệu tương tác">
-          INTERACTIVE BẢNG SỐ LIỆU
-        </div>
+        <section class="aviation-stats" aria-label="Bảng số liệu hàng không nổi bật">
+          <div class="aviation-stats__wrap">
+            <div class="aviation-stats__hero-grid">
+              <article class="aviation-stats__card aviation-stats__hero-card">
+                <div class="aviation-stats__big-number"><span class="aviation-count" data-target="5" data-decimals="0">0</span> <span class="aviation-stats__suffix">tháng</span></div>
+                <div class="aviation-stats__period">(T6 - T11/2025)</div>
+                <div class="aviation-stats__desc">Từ cấp phép kinh doanh vận chuyển đến chuyến bay thương mại đầu tiên</div>
+              </article>
+
+              <article class="aviation-stats__card aviation-stats__hero-card">
+                <div class="aviation-stats__big-number"><span class="aviation-count" data-target="5" data-decimals="0">0</span> <span class="aviation-stats__suffix">tháng</span></div>
+                <div class="aviation-stats__period">(T9/2025 - T1/2026)</div>
+                <div class="aviation-stats__desc">Hoàn thành bộ 3 chứng nhận: Khai thác (AOC), Đào tạo (ATO) và Bảo dưỡng (AMO). Một trong số ít hãng hàng không trẻ tại Việt Nam sở hữu hệ sinh thái vận hành khép kín</div>
+              </article>
+            </div>
+
+            <div class="aviation-stats__grid">
+              <article class="aviation-stats__card aviation-stats__cell">
+                <div class="aviation-stats__title"><span class="aviation-count" data-target="12500" data-decimals="0" data-format="vi-decimal">0</span> <span class="aviation-stats__unit">chuyến bay</span></div>
+              </article>
+
+              <article class="aviation-stats__card aviation-stats__cell">
+                <div class="aviation-stats__title"><span class="aviation-count" data-target="2.2" data-decimals="1" data-format="vi-decimal">0</span> <span class="aviation-stats__unit">triệu hành khách</span></div>
+              </article>
+
+              <article class="aviation-stats__card aviation-stats__cell">
+                <div class="aviation-stats__title"><span class="aviation-count" data-target="32" data-decimals="0">0</span> <span class="aviation-stats__unit">tàu bay</span></div>
+                <div class="aviation-stats__subtitle">(T8/2025 - hết năm 2026)</div>
+                <div class="aviation-stats__desc">Tốc độ sở hữu đội tàu bay hiếm có ở Việt Nam</div>
+              </article>
+
+              <article class="aviation-stats__card aviation-stats__cell">
+                <div class="aviation-stats__title"><span class="aviation-count" data-target="22.5" data-decimals="1" data-format="vi-decimal">0</span> <span class="aviation-stats__unit">tỷ USD</span></div>
+                <div class="aviation-stats__desc">Giá trị đơn hàng 40 chiếc Boeing 787-9 Dreamliner, đơn hàng thân rộng lớn nhất lịch sử hàng không Việt Nam, bàn giao từ 2031</div>
+              </article>
+
+              <article class="aviation-stats__card aviation-stats__otp">
+                <div class="aviation-stats__otp-title">Top <span class="aviation-count" data-target="1" data-decimals="0">0</span> <span class="aviation-stats__unit">OTP toàn ngành</span></div>
+                <div class="aviation-stats__otp-desc">
+                  Thiết lập hệ thống khai thác kỷ luật, vận hành đồng bộ và chỉ số kiểm soát theo thời gian thực, trong đó độ tin cậy được xác lập như một lợi thế cạnh tranh cốt lõi. Hãng liên tiếp dẫn đầu toàn ngành về chỉ số đúng giờ (OTP), đạt 86,9% vào Quý II/2026.
+                  <span class="aviation-stats__alert">Mới nhất vào tháng 7/2026, trong bối cảnh thời tiết diễn biến bất lợi trên nhiều khu vực, hãng vẫn ghi nhận OTP đứng thứ 3 toàn ngành và cao nhất trong nhóm ba hãng hàng không có quy mô khai thác lớn nhất Việt Nam.</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
 
         <div class="story-copy journey__copy">
           <p>
@@ -831,6 +882,6 @@
       </section>
     </main>
 
-    <script src="cript.js"></script>
+    <script src="cript.js?v=aviation-stats-16"></script>
   </body>
 </html>
