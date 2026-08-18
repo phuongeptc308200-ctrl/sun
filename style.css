@@ -60,9 +60,9 @@ main,
 
 .hero__plane {
   z-index: 2;
-  top: -6%;
-  left: 6%;
-  width: 88%;
+  top: 18%;
+  left: 20.08%;
+  width: 59.84%;
   height: auto;
   transform-origin: 52% 61%;
   filter: drop-shadow(0 0.7rem 0.9rem rgba(91, 43, 27, 0.16));
@@ -105,28 +105,28 @@ main,
 @keyframes plane-flight {
   0% {
     opacity: 0;
-    transform: translate3d(94%, 0, 0);
+    transform: translate3d(139%, 0, 0);
   }
 
   0.5% {
     opacity: 1;
-    transform: translate3d(94%, 0, 0);
+    transform: translate3d(139%, 0, 0);
   }
 
   49% {
     opacity: 1;
-    transform: translate3d(-94%, -1.2%, 0);
+    transform: translate3d(-139%, -1.2%, 0);
   }
 
   49.5% {
     opacity: 0;
-    transform: translate3d(-94%, -1.2%, 0);
+    transform: translate3d(-139%, -1.2%, 0);
   }
 
   50%,
   100% {
     opacity: 0;
-    transform: translate3d(94%, 0, 0);
+    transform: translate3d(139%, 0, 0);
   }
 }
 
