@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "NotoSerif-Regular";
+  src: url("NotoSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --page-background: #eee5d3;
@@ -24,12 +32,22 @@
 
 html {
   background: var(--page-background);
+  font-size: 115.625%;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   background: var(--page-background);
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
+}
+
+button,
+input,
+select,
+textarea,
+svg text {
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
 }
 
 main,
@@ -192,8 +210,12 @@ main,
   width: min(35%, 720px);
   margin: clamp(0.75rem, 1.8vw, 2rem) auto clamp(2rem, 4vw, 4.5rem);
   color: #514942;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(0.78rem, 0.92vw, 1.2rem);
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
+  font-size: clamp(
+    calc(0.78rem + 3px),
+    calc(0.92vw + 3px),
+    calc(1.2rem + 3px)
+  );
   line-height: 1.55;
   text-align: justify;
 }
@@ -289,7 +311,7 @@ main,
   border: 1px solid #bba88f;
   background: #d9c4a8;
   color: #3b3028;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
   font-size: clamp(0.58rem, 0.7vw, 0.85rem);
   font-weight: 700;
   text-align: center;
@@ -315,25 +337,15 @@ main,
 
 /* Bảng số liệu hàng không */
 .aviation-stats {
+  --aviation-yellow: #f1c020;
+  --aviation-red: #ca3337;
   position: relative;
   isolation: isolate;
-  padding: clamp(2.25rem, 4.1vw, 4.15rem) clamp(1rem, 4vw, 3rem);
+  padding: clamp(1.6875rem, 3.075vw, 3.1125rem) clamp(0.75rem, 3vw, 2.25rem);
   overflow: hidden;
   color: #514942;
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at 15% 28%, rgba(226, 188, 72, 0.12), transparent 28rem),
-    radial-gradient(circle at 88% 72%, rgba(183, 31, 32, 0.06), transparent 26rem),
-    var(--page-background);
-}
-
-.aviation-stats::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.2) 48%, transparent 76%);
-  pointer-events: none;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
+  background: var(--page-background);
 }
 
 .aviation-stats__wrap {
@@ -359,7 +371,7 @@ main,
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: clamp(1rem, 1.8vw, 1.4rem);
-  background: linear-gradient(135deg, rgba(187, 61, 66, 0.78), rgba(158, 38, 44, 0.72));
+  background: var(--aviation-red);
   box-shadow: 0 14px 34px rgba(91, 35, 30, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   text-align: center;
   backdrop-filter: blur(14px);
@@ -380,32 +392,32 @@ main,
 .js-enabled .aviation-stats__card.is-visible:hover,
 .aviation-stats__card:hover {
   transform: translateY(-4px);
-  background: linear-gradient(135deg, rgba(198, 72, 76, 0.84), rgba(169, 43, 49, 0.78));
+  background: var(--aviation-red);
   box-shadow: 0 20px 44px rgba(91, 35, 30, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .aviation-stats__hero-card {
-  min-height: 124px;
-  padding: clamp(0.8rem, 1.3vw, 1rem);
+  min-height: 93px;
+  padding: clamp(0.6rem, 0.975vw, 0.75rem);
 }
 
 .aviation-stats__cell {
-  min-height: 96px;
-  padding: clamp(0.75rem, 1.2vw, 1rem);
+  min-height: 72px;
+  padding: clamp(0.5625rem, 0.9vw, 0.75rem);
 }
 
 .aviation-stats__big-number,
 .aviation-stats__title,
 .aviation-stats__otp-title {
   color: #fff;
-  font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
   line-height: 1;
   letter-spacing: 0.01em;
   text-shadow: none;
 }
 
 .aviation-count {
-  color: #ffd15a;
+  color: var(--aviation-yellow);
   font-size: 1.28em;
   font-weight: 700;
   line-height: 0.8;
@@ -414,21 +426,21 @@ main,
 
 .aviation-stats__big-number {
   margin-bottom: 0.5rem;
-  font-size: clamp(1.7rem, 3.7vw, 2.95rem);
+  font-size: clamp(calc(1.7rem - 2px), calc(3.7vw - 2px), calc(2.95rem - 2px));
   white-space: nowrap;
 }
 
 .aviation-stats__title {
   margin-bottom: 0.5rem;
-  font-size: clamp(1.4rem, 3.15vw, 2.45rem);
+  font-size: clamp(calc(1.4rem - 2px), calc(3.15vw - 2px), calc(2.45rem - 2px));
   white-space: nowrap;
 }
 
 .aviation-stats__otp {
   grid-column: 1 / -1;
-  min-height: 113px;
+  min-height: 85px;
   margin-top: clamp(0.5rem, 0.9vw, 0.75rem);
-  padding: clamp(0.9rem, 1.5vw, 1.15rem);
+  padding: clamp(0.675rem, 1.125vw, 0.8625rem);
   overflow: hidden;
 }
 
@@ -436,7 +448,7 @@ main,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, transparent 0%, rgba(255, 209, 90, 0.08) 45%, transparent 72%);
+  background: linear-gradient(115deg, transparent 0%, rgba(241, 192, 32, 0.12) 45%, transparent 72%);
   transform: translateX(-120%);
   animation: aviation-stats-shine 5s ease-in-out infinite 1.5s;
   pointer-events: none;
@@ -444,13 +456,13 @@ main,
 
 .aviation-stats__otp-title {
   margin-bottom: 0.65rem;
-  font-size: clamp(1.5rem, 3.25vw, 2.55rem);
+  font-size: clamp(calc(1.5rem - 2px), calc(3.25vw - 2px), calc(2.55rem - 2px));
 }
 
 .aviation-stats__suffix,
 .aviation-stats__unit {
   color: #fff;
-  font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
   font-size: 0.56em;
 }
 
@@ -458,7 +470,7 @@ main,
 .aviation-stats__subtitle {
   color: #fff;
   margin-bottom: 0.55rem;
-  font-size: clamp(0.72rem, 1.05vw, 0.88rem);
+  font-size: clamp(calc(0.72rem - 2px), calc(1.05vw - 2px), calc(0.88rem - 2px));
   font-weight: 600;
 }
 
@@ -467,7 +479,7 @@ main,
   color: #fff;
   max-width: 52rem;
   margin: 0 auto;
-  font-size: clamp(0.72rem, 0.95vw, 0.86rem);
+  font-size: clamp(calc(0.72rem - 2px), calc(0.95vw - 2px), calc(0.86rem - 2px));
   line-height: 1.48;
 }
 
@@ -482,10 +494,8 @@ main,
 
 @media (max-width: 760px) {
   .aviation-stats {
-    padding: 2.45rem 0.5rem;
-    background:
-      radial-gradient(circle at 50% 20%, rgba(226, 188, 72, 0.1), transparent 20rem),
-      var(--page-background);
+    padding: 1.8375rem 0.375rem;
+    background: var(--page-background);
   }
 
   .aviation-stats__hero-grid,
@@ -504,15 +514,16 @@ main,
 }
 
 .milestone-timeline {
-  padding: clamp(3.5rem, 7vw, 7.5rem) clamp(1rem, 4vw, 3rem) clamp(4rem, 8vw, 8rem);
+  padding: clamp(2.8rem, 5vw, 5rem) clamp(1rem, 4vw, 3rem) clamp(3rem, 5vw, 5rem);
   background:
     radial-gradient(circle at 50% 8%, rgba(226, 188, 72, 0.13), transparent 26rem),
     var(--page-background);
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
 }
 
 .milestone-timeline__header {
   width: min(90%, 760px);
-  margin: 0 auto clamp(3rem, 5vw, 5rem);
+  margin: 0 auto clamp(1.8rem, 3vw, 3rem);
   text-align: center;
 }
 
@@ -521,7 +532,7 @@ main,
   background: linear-gradient(100deg, #b71f20 0%, #d6673e 100%);
   background-clip: text;
   color: transparent;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
   font-size: clamp(1.75rem, 3vw, 3.35rem);
   font-weight: 500;
   line-height: 1.15;
@@ -532,10 +543,16 @@ main,
 }
 
 .timeline {
+  --timeline-row: clamp(13rem, 14vw, 14rem);
   position: relative;
-  width: min(100%, 980px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: var(--timeline-row);
+  width: min(100%, 1120px);
   margin: 0 auto;
   padding: 0;
+  column-gap: 0;
+  row-gap: 0;
   list-style: none;
 }
 
@@ -553,16 +570,16 @@ main,
 
 .tl-item {
   position: relative;
-  left: 0;
-  width: 50%;
-  padding: 0 clamp(2.4rem, 4vw, 3.5rem) clamp(2.8rem, 5vw, 4.5rem) 0;
+  width: 100%;
+  padding: 0 clamp(2rem, 3vw, 2.8rem) clamp(0.6rem, 1.2vw, 1rem) 0;
   text-align: right;
 }
 
 .tl-item:nth-child(even) {
-  left: 50%;
+  left: 0;
+  margin-top: calc(var(--timeline-row) / 2);
   padding-right: 0;
-  padding-left: clamp(2.4rem, 4vw, 3.5rem);
+  padding-left: clamp(2rem, 3vw, 2.8rem);
   text-align: left;
 }
 
@@ -591,7 +608,7 @@ main,
 }
 
 .tl-card {
-  width: min(100%, 400px);
+  width: min(100%, 500px);
   margin: 0;
   padding: clamp(1rem, 1.7vw, 1.4rem);
   appearance: none;
@@ -613,18 +630,18 @@ main,
   border-radius: 999px;
   background: #a3242b;
   color: #fff8ec;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(0.68rem, 0.76vw, 0.82rem);
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
+  font-size: clamp(0.82rem, 0.9vw, 0.98rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
 }
 
 .tl-desc {
   display: block;
   color: #514942;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(0.78rem, 0.9vw, 1rem);
-  line-height: 1.65;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
+  font-size: clamp(0.94rem, 1.08vw, 1.12rem);
+  line-height: 1.58;
 }
 
 .tl-item:hover .tl-node,
@@ -773,7 +790,7 @@ main,
   background: #cfcfcf;
   color: #91463c;
   padding: clamp(0.8rem, 1.45vw, 1.8rem) 0.5rem;
-  font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+  font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
   font-size: clamp(0.76rem, 1.8vw, 2.15rem);
   font-weight: 400;
   line-height: 1;
@@ -913,7 +930,7 @@ main,
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .milestone-timeline {
     padding-inline: 1.2rem;
   }
@@ -924,13 +941,19 @@ main,
 
   .timeline::before {
     left: 1.05rem;
+    bottom: 0;
+  }
+
+  .timeline {
+    display: block;
   }
 
   .tl-item,
   .tl-item:nth-child(even) {
     left: 0;
     width: 100%;
-    padding: 0 0 2.6rem 3.4rem;
+    margin-top: 0;
+    padding: 0 0 1.6rem 3.4rem;
     text-align: left;
   }
 
@@ -960,7 +983,8 @@ main,
   }
   .network-map, .network-map * { box-sizing: border-box; }
   .network-map {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "NotoSerif-Regular", "Noto Serif", Georgia, serif;
+    font-weight: 400;
     background: var(--page-background);
     color: var(--ink);
     padding: 24px;
@@ -989,7 +1013,7 @@ main,
     padding: 11px 20px;
     background: transparent;
     color: var(--red);
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: .04em;
     cursor: pointer;
     transition: background .2s ease, color .2s ease, transform .2s ease;
@@ -1034,11 +1058,11 @@ main,
   .domestic-svg .island-label,
   .world-svg .islet-label {
     fill: #9a887f;
-    font-size: 10.5px;
-    font-weight: 700;
+    font-size: 12.7px;
+    font-weight: 400;
     letter-spacing: .04em;
   }
-  .domestic-svg .island-label tspan { font-weight: 400; font-style: italic; }
+  .domestic-svg .island-label tspan { font-weight: 400; font-style: normal; }
 
   .world-svg .countries path {
     fill: #e8dfd0;
@@ -1057,8 +1081,8 @@ main,
   }
   .world-svg .islet-label {
     fill: #8f7d72;
-    font-size: 4.6px;
-    font-weight: 700;
+    font-size: 2.6px;
+    font-weight: 400;
     letter-spacing: .03em;
     paint-order: stroke;
     stroke: rgba(255, 255, 255, .9);
@@ -1111,15 +1135,15 @@ main,
   .world-svg .airport-marker .dot-ring { stroke-width: 1.1; }
   .airport-label {
     fill: #88736b;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14.3px;
+    font-weight: 400;
     letter-spacing: .03em;
     paint-order: stroke;
     stroke: rgba(255, 255, 255, .9);
     stroke-width: 3px;
     stroke-linejoin: round;
   }
-  .world-svg .airport-label { font-size: 5.7px; stroke-width: 1.35px; }
+  .world-svg .airport-label { font-size: 4.6px; stroke-width: 1.35px; }
   .hub-ring {
     fill: none;
     stroke: var(--red-bright);
@@ -1133,16 +1157,25 @@ main,
     0% { transform: scale(.7); opacity: .55; }
     100% { transform: scale(2.15); opacity: 0; }
   }
-  .plane-icon { filter: drop-shadow(0 3px 3px rgba(85, 35, 32, .26)); }
+  .plane-icon {
+    transform-box: fill-box;
+    transform-origin: center;
+    filter: drop-shadow(0 3px 3px rgba(85, 35, 32, .26));
+  }
+  .world-svg .plane-icon {
+    transform-box: view-box;
+    transform-origin: 586.61px 287.67px;
+    transform: rotate(-5deg) scale(0.7);
+  }
   .hub-label {
     fill: var(--red);
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 16.5px;
+    font-weight: 400;
     paint-order: stroke;
     stroke: #fff;
     stroke-width: 4px;
   }
-  .world-svg .hub-label { font-size: 7px; stroke-width: 1.8px; }
+  .world-svg .hub-label { font-size: 8px; stroke-width: 1.8px; }
 
   .route-panel {
     position: absolute;
@@ -1170,12 +1203,12 @@ main,
     border-radius: 999px;
     background: var(--red);
     color: #fff;
-    font-size: 13px;
-    font-weight: 800;
+    font-size: 15.3px;
+    font-weight: 400;
     letter-spacing: .03em;
     box-shadow: 0 5px 12px rgba(167, 25, 32, .2);
   }
-  .panel-count { font-size: 14px; font-weight: 800; }
+  .panel-count { font-size: 16.5px; font-weight: 400; }
   .route-list {
     list-style: none;
     padding: 0;
@@ -1194,7 +1227,7 @@ main,
     background: transparent;
     color: var(--red);
     text-align: left;
-    font-size: 13px;
+    font-size: 15.3px;
     line-height: 1.22;
     cursor: pointer;
     transition: background .16s ease, transform .16s ease;
@@ -1206,7 +1239,7 @@ main,
     background: rgba(167, 25, 32, .09);
     transform: translateX(2px);
   }
-  .route-no { font-weight: 800; font-variant-numeric: tabular-nums; }
+  .route-no { font-weight: 400; font-variant-numeric: tabular-nums; }
 
   .map-note {
     position: absolute;
@@ -1214,7 +1247,7 @@ main,
     bottom: 15px;
     z-index: 4;
     color: #a59086;
-    font-size: 11px;
+    font-size: 13.2px;
     letter-spacing: .02em;
   }
   .world-map-note { display: none; }
@@ -1265,7 +1298,7 @@ main,
       scrollbar-color: rgba(167, 25, 32, .42) transparent;
     }
     .route-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px 8px; }
-    .route-link { font-size: 11px; grid-template-columns: 23px 1fr; padding: 3px; }
+    .route-link { font-size: 13.2px; grid-template-columns: 23px 1fr; padding: 3px; }
     .mapsvg { transform: none; }
     #panel-international .world-svg {
       transform: scale(1.22);
