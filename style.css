@@ -8,7 +8,7 @@
 
 :root {
   color-scheme: light;
-  --page-background: #eee5d3;
+  --page-background: #efe9db;
 }
 
 * {
@@ -190,7 +190,7 @@ main,
     to bottom,
     #f5efe4 0%,
     #f2eadb 48%,
-    #eee5d3 100%
+    var(--page-background) 100%
   );
   pointer-events: none;
 }
@@ -225,6 +225,10 @@ main,
   background: var(--page-background);
 }
 
+.journey > .section-heading {
+  margin-bottom: clamp(1rem, 2vw, 2.5rem);
+}
+
 .network {
   background: var(--page-background);
 }
@@ -248,12 +252,12 @@ main,
 
 .network__heading-wrap::before {
   top: 0;
-  background: linear-gradient(to bottom, var(--page-background) 0%, rgba(238, 229, 211, 0) 100%);
+  background: linear-gradient(to bottom, var(--page-background) 0%, rgba(239, 233, 219, 0) 100%);
 }
 
 .network__heading-wrap::after {
   bottom: 0;
-  background: linear-gradient(to top, var(--page-background) 0%, rgba(238, 229, 211, 0) 100%);
+  background: linear-gradient(to top, var(--page-background) 0%, rgba(239, 233, 219, 0) 100%);
 }
 
 .network__heading-wrap .section-heading {
@@ -274,7 +278,7 @@ main,
   right: 0;
   left: 0;
   height: clamp(1rem, 2vw, 2.5rem);
-  background: #f0e9d9;
+  background: var(--page-background);
   pointer-events: none;
 }
 
@@ -291,7 +295,7 @@ main,
   right: 0;
   left: 0;
   height: clamp(1rem, 2vw, 2.5rem);
-  background: #f0e7d5;
+  background: var(--page-background);
   pointer-events: none;
 }
 
