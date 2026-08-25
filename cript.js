@@ -3,13 +3,20 @@
 document.documentElement.classList.add("js-enabled");
 
 const revealElements = document.querySelectorAll(
-  ".section-heading, .story-copy, .interactive-label, .journey__feature, .milestone-timeline__header, .tl-item, .network-map, .network__feature, .wings__image, .flight-experience, .ambassadors__visual, .ecosystem__quote, .ecosystem__closing",
+  ".section-heading, .aviation-stats__image, .story-copy, .interactive-label, .journey__feature, .milestone-timeline__header, .tl-item, .network-map, .network__feature, .wings__image, .flight-experience, .ambassadors__visual, .ecosystem__quote, .ecosystem__closing",
 );
 
 revealElements.forEach((element, index) => {
   element.classList.add("scroll-reveal");
   element.style.setProperty("--reveal-delay", `${(index % 3) * 70}ms`);
 });
+
+// Reveal the journey visuals in their natural top-to-bottom order.
+document
+  .querySelectorAll(".journey > .section-heading, .journey .aviation-stats__image, .journey__feature")
+  .forEach((element, index) => {
+    element.style.setProperty("--reveal-delay", `${index * 180}ms`);
+  });
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(

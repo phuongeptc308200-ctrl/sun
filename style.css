@@ -607,7 +607,7 @@ main,
   place-items: center;
   border: 2px solid #e2bc48;
   border-radius: 50%;
-  background: #fff url("img/bong hoa.png") center / 102% no-repeat;
+  background: #fff url("https://cafefcdn.com/203337114487263232/2026/8/25/bong-hoa-1787663775660376801787.png") center / 102% no-repeat;
   color: transparent;
   box-shadow: 0 0 0 5px var(--page-background), 0 4px 12px rgba(122, 26, 32, 0.22);
   font-size: 0;
@@ -762,6 +762,13 @@ main,
 
 .ecosystem__copy p:last-child {
   margin-bottom: 0;
+}
+
+.page-credit {
+  padding: clamp(1rem, 2vw, 2rem) 1rem;
+  color: #514942;
+  font-size: clamp(0.72rem, 0.9vw, 1rem);
+  text-align: center;
 }
 
 .flight-experience {
